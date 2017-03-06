@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { MaterialModule } from '@angular/material'
 import 'hammerjs'
+import { AgmCoreModule } from 'angular2-google-maps/core'
+import { AngularFireModule } from 'angularfire2'
 
 import { AppComponent } from './app.component'
+import { environment } from '../environments/environment'
 
-import { AgmCoreModule } from 'angular2-google-maps/core'
+export const firebaseConfig = environment.firebase
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core'
     MaterialModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAKp_twX1LFjrdJY2YlL4PUn986ca3y21E'
-    })
+    }),
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
