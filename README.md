@@ -22,3 +22,10 @@ Lists all resources, allowing for them to be sorted and narrowed by all categori
 Form page containing fields for each element of a resource. When called as an edit page, fields are filled in with existing values, and saving PUTs instead of POST.  
 #### Icons  
 Material design icons are from: [design.google.com](https://design.google.com/icons/)  
+
+## Development Tips
+- Rebase
+    - you can use rebase when pulling to avoid merge commits
+    - `git pull --rebase`
+    - to make it automatic: `git config pull.rebase true`
+    - [some more info about rebase](http://gitready.com/intermediate/2009/01/31/intro-to-rebase.html)
