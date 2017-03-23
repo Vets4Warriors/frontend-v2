@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material'
 import 'hammerjs'
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { AngularFireModule } from 'angularfire2'
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppComponent } from './app.component'
 import { environment } from '../environments/environment'
@@ -26,6 +27,8 @@ export const firebaseConfig = environment.firebase
       apiKey: 'AIzaSyAKp_twX1LFjrdJY2YlL4PUn986ca3y21E'
     }),
     AngularFireModule.initializeApp(firebaseConfig),
+
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   providers: [],
   bootstrap: [AppComponent]
