@@ -1,2 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+// You can add global styles to this file, and also import other style files
+// mat-color is imported through theme. It's used to strip hex color from variable.
 @import '~@angular/material/core/theming/prebuilt/pink-bluegrey';
+
+// Typography
+@import url('https://fonts.googleapis.com/css?family=Arimo|Didact+Gothic');
+$primary-font: 'Didact Gothic', sans-serif;
+$accent-font: 'Arimo', sans-serif;
+
+// Loading Splash for pre-bootstrapped app
+.loading-splash {
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: mat-color($primary);
+  z-index: 100;
+
+  .text {
+    color: mat-color($accent);
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+
+    h1 {
+      font-family: $primary-font;
+    }
+
+    p {
+      font-family: $accent-font;
+    }
+  }
+}
+
