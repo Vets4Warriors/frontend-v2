@@ -8,6 +8,5 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!'
   constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
 }

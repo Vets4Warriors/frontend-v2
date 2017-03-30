@@ -31,7 +31,7 @@ const ROUTES: Routes = [
     HttpModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAKp_twX1LFjrdJY2YlL4PUn986ca3y21E'
+      apiKey: environment.googleMaps.apiKey,
     }),
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(ROUTES),

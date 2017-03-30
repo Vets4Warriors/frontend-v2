@@ -11,5 +11,8 @@ export const environment = {
     databaseURL: 'https://vets-4-warriors.firebaseio.com',
     storageBucket: 'vets-4-warriors.appspot.com',
     messagingSenderId: '115737848275'
+  },
+  googleMaps: {
+    apiKey: 'AIzaSyCBEipjiuluP1z2yMoPNRZTESTN3krdSD0'
   }
 }
