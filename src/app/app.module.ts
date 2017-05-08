@@ -7,7 +7,7 @@ import { Location } from '@angular/common'
 import { RouterModule, Routes } from '@angular/router';
 
 import 'hammerjs'
-import { AgmCoreModule } from 'angular2-google-maps/core'
+import { AgmCoreModule } from '@agm/core'
 import { AngularFireModule } from 'angularfire2'
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
@@ -15,7 +15,6 @@ import { AppComponent } from './app.component'
 import { environment } from '../environments/environment'
 
 export const firebaseConfig = environment.firebase
-
 
 const ROUTES: Routes = [
   { path: '',      component: AppComponent },
