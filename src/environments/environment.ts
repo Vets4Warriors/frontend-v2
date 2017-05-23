@@ -5,14 +5,17 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyC4EbmxRu6EvhWHYc5_eTrLF7swC9DHd2Y',
-    authDomain: 'vets-4-warriors.firebaseapp.com',
-    databaseURL: 'https://vets-4-warriors.firebaseio.com',
-    storageBucket: 'vets-4-warriors.appspot.com',
-    messagingSenderId: '115737848275'
-  },
+  base: 'http://localhost:3000',
   googleMaps: {
     apiKey: 'AIzaSyCBEipjiuluP1z2yMoPNRZTESTN3krdSD0'
+  },
+  auth0: {
+    // Client config
+    clientID: 'hjDO7i3dXLrWyISp7ZIxExw122gCldJ1',
+    clientDomain: 'vets4warriors.auth0.com',
+    // Auth config
+    redirectUri: 'http://localhost:4200/authcallback',
+    audience: 'https://vets4warriors.auth0.com/api/v2/',
+    scope: 'openid',
   }
 }

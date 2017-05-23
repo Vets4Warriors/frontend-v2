@@ -1,6 +1,8 @@
-<router-outlet>
-  <agm-map>
-
-  </agm-map>
-</router-outlet>
-
+<!--<agm-map></agm-map>-->
+<section class="main">
+  <nav>
+    <md-toolbar>Vets 4 Warriors CLR</md-toolbar>
+    <a *ngIf="authService.authenticated" (click)="authService.logout()">Logout</a>
+  </nav>
+  <router-outlet></router-outlet>
+</section>
