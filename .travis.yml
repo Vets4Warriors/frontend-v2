@@ -36,6 +36,7 @@ install:
   - yarn install
 
 script:
+  - ng lint --fix
   - ng build --prod
   - ng test --watch false
   - ng e2e
