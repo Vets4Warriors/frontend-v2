@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { MaterialModule, MdToolbarModule } from '@angular/material'
+import { MdToolbarModule } from '@angular/material'
 import { RouterModule, Routes } from '@angular/router'
 
 import 'hammerjs'
@@ -34,7 +34,7 @@ const ROUTES: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    // All material modules
     MdToolbarModule,
     // Setup maps
     AgmCoreModule.forRoot({

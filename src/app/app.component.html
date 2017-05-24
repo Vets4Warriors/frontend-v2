@@ -1,8 +1,11 @@
 <!--<agm-map></agm-map>-->
 <section class="main">
   <nav>
-    <md-toolbar>Vets 4 Warriors CLR</md-toolbar>
-    <a *ngIf="authService.authenticated" (click)="authService.logout()">Logout</a>
+    <md-toolbar>
+      <span>Vets 4 Warriors CLR</span>
+      <span class="fill-remaining-space"></span>
+      <a *ngIf="authService.authenticated" (click)="authService.logout()">Logout</a>
+    </md-toolbar>
   </nav>
   <router-outlet></router-outlet>
 </section>

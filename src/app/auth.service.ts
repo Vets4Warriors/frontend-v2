@@ -19,6 +19,8 @@ export class AuthService {
 
   loggedIn: boolean
   loggedIn$ = new BehaviorSubject(this.loggedIn)
+  error: object
+  errors$ = new BehaviorSubject(this.error)
 
   constructor(private router: Router) {
     if (this.authenticated) {
@@ -45,6 +47,11 @@ export class AuthService {
     })
   }
 
+  private handleError(err) {
+    this.error = err
+    this.errors$.next(err)
+  }
+
   setLoggedIn(val: boolean) {
     this.loggedIn = val
     this.loggedIn$.next(this.loggedIn)
@@ -59,18 +66,25 @@ export class AuthService {
     })
   }
 
+  logout() {
+    localStorage.removeItem(TOKEN_NAME)
+    localStorage.removeItem(ID_TOKEN_NAME)
+    localStorage.removeItem(PROFILE_NAME)
+    this.router.navigate(['/'])
+    this.setLoggedIn(false)
+  }
+
   handleAuth() {
     // When Auth0 hash parsed, get profile
     this.auth0.parseHash(null, (err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = ''
         this.getProfile(authResult)
-        this.router.navigate(['/'])
+        this.router.navigate(['/home'])
       } else if (err) {
-        this.router.navigate(['/'])
-        // console.error(`Error: ${err.error}`)
+        this.router.navigate(['/home'])
+        this.handleError(err)
       }
     })
   }
-
 }

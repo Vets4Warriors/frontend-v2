@@ -5,7 +5,6 @@ import { AuthService } from '../auth.service'
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [AuthService],
 })
 export class HomeComponent implements OnInit {
 
