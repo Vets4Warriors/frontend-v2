@@ -1,8 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~spinkit/scss/spinners/7-three-bounce';
 
 md-toolbar {
   .fill-remaining-space {
     flex: 1 1 auto;
   }
 }
+
+/* Before the app loads */
+section.loading {
+  margin: 0 auto;
+  h1 {
+
+  }
+}
+
