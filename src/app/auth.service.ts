@@ -17,6 +17,13 @@ export class AuthService {
     domain: env.auth0.clientDomain,
   })
 
+  authOpts = {
+    responseType: 'token id_token',
+    redirectUri: env.auth0.redirectUri,
+    audience: env.auth0.audience,
+    scope: env.auth0.scope,
+  }
+
   loggedIn: boolean
   loggedIn$ = new BehaviorSubject(this.loggedIn)
   error: object
@@ -31,6 +38,10 @@ export class AuthService {
   get authenticated() {
     // Check if there's an unexpired access token
     return tokenNotExpired(TOKEN_NAME)
+  }
+
+  get user() {
+    return JSON.parse(localStorage.getItem(PROFILE_NAME))
   }
 
   private setSession(authResult, profile) {
@@ -58,12 +69,11 @@ export class AuthService {
   }
 
   login() {
-    this.auth0.authorize({
-      responseType: 'token id_token',
-      redirectUri: env.auth0.redirectUri,
-      audience: env.auth0.audience,
-      scope: env.auth0.scope,
-    })
+    if (env.auth0.popup) {
+      this.auth0.popup.authorize(this.authOpts, this.handleAuth.bind(this))
+    } else {
+      this.auth0.authorize(this.authOpts)
+    }
   }
 
   logout() {
@@ -78,6 +88,7 @@ export class AuthService {
     // When Auth0 hash parsed, get profile
     this.auth0.parseHash(null, (err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
+        // remove hash from callback url
         window.location.hash = ''
         this.getProfile(authResult)
         this.router.navigate(['/home'])

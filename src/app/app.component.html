@@ -4,7 +4,11 @@
     <md-toolbar>
       <span>Vets 4 Warriors CLR</span>
       <span class="fill-remaining-space"></span>
-      <a *ngIf="authService.authenticated" (click)="authService.logout()">Logout</a>
+      <span *ngIf="authService.authenticated">
+          <img src="{{authService.user.picture}}" alt="Profile picture">
+         <a (click)="authService.logout()">Logout</a>
+      </span>
+
     </md-toolbar>
   </nav>
   <router-outlet></router-outlet>
