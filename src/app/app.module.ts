@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { MdToolbarModule } from '@angular/material'
+import { MdToolbarModule, MdButtonModule } from '@angular/material'
 import { RouterModule, Routes } from '@angular/router'
 
 import 'hammerjs'
@@ -36,6 +36,7 @@ const ROUTES: Routes = [
     HttpModule,
     // All material modules
     MdToolbarModule,
+    MdButtonModule,
     // Setup maps
     AgmCoreModule.forRoot({
       apiKey: environment.googleMaps.apiKey,

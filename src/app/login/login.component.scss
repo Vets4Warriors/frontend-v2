@@ -1,0 +1,19 @@
+@import '../../variables';
+
+article {
+    text-align: center;
+    background: $white;
+    padding: 16px;
+    box-shadow: 0 0 40px 4px $black;
+    border-radius: 4px;
+
+    img {
+        margin: 0 auto;
+        height: auto;
+        width: 50%;
+    }
+
+    a[md-button] {
+
+    }
+}
