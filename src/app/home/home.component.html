@@ -2,5 +2,10 @@
   <app-login></app-login>
 </div>
 <ng-template #loggedIn>
-  <p>Logged In.</p>
+  <!-- The search bar and branches -->
+  <virtual-scroll [items]="branches" (update)="viewBranches = $event">
+    <p *ngFor="let branch of viewBranches">Branch</p>
+
+    <md-spinner *ngIf="loading"></md-spinner>
+  </virtual-scroll>
 </ng-template>

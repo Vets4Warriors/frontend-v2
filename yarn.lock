@@ -246,6 +246,10 @@ angular2-jwt@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/angular2-jwt/-/angular2-jwt-0.2.3.tgz#54efdda3ceedba85f6a37b165f22ac22b8adf021"
 
+angular2-virtual-scroll@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/angular2-virtual-scroll/-/angular2-virtual-scroll-0.1.7.tgz#f51424e603bfa6c3f9b062689435afe1f194a8d6"
+
 angulartics2@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-1.6.4.tgz#1388e76b37b81bd5649ca218d384d359d9c68782"
