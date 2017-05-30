@@ -1,4 +1,4 @@
-<section class="main">
+<section class="main" [class.logged-out]="!authService.authenticated">
   <nav>
     <md-toolbar>
       <span>Vets 4 Warriors CLR</span>

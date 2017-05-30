@@ -1,3 +1,12 @@
+@import '../variables';
+
+section.logged-out {
+  background-color: transparentize($black, .75);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 agm-map {
   height: 100vh;
   width: 100vw;
@@ -11,5 +20,9 @@ md-toolbar {
   img {
     height: 40px;
     width: 40px;
+  }
+
+  .fill-remaining-space {
+    flex: 1 1 auto;
   }
 }

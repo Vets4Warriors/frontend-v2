@@ -1,6 +1,4 @@
-<div *ngIf="!authService.authenticated; else loggedIn">
-  <app-login></app-login>
-</div>
+<app-login *ngIf="!authService.authenticated; else loggedIn"></app-login>
 <ng-template #loggedIn>
   <!-- The search bar and branches -->
   <virtual-scroll [items]="branches" (update)="viewBranches = $event">

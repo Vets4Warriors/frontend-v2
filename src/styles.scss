@@ -1,18 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import '~spinkit/scss/spinners/7-three-bounce';
+@import 'variables';
 
-md-toolbar {
-  .fill-remaining-space {
-    flex: 1 1 auto;
-  }
+// Global 
+h1 {
+  font-family: $primary-font-family, $helvetica;
+}
+
+p {
+  font-family: $secondary-font-family, $verdana;
 }
 
 /* Before the app loads */
 section.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
-  h1 {
-
-  }
 }
 
+/*
+ * Override default material design fonts ($mat-font-family)
+ */
+$mat-font-family: $primary-font-family, sans-serif;
+
+
+.mat-button-toggle,
+%mat-button-base,
+.mat-button,
+.mat-raised-button,
+.mat-fab,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-card,
+.mat-checkbox,
+.mat-input-container,
+.mat-list,
+.mat-menu-item,
+.mat-radio-button,
+.mat-select,
+.mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content,
+.mat-simple-snackbar,
+.mat-tab-label,
+.mat-slide-toggle-content,
+.mat-toolbar,
+.mat-tooltip  {
+  font-family: $mat-font-family !important;
+}

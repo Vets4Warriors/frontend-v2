@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { MdToolbarModule, MdProgressSpinnerModule } from '@angular/material'
+import { MdToolbarModule, MdProgressSpinnerModule, MdButtonModule } from '@angular/material'
 import { RouterModule, Routes } from '@angular/router'
 import { VirtualScrollModule } from 'angular2-virtual-scroll'
 
@@ -39,6 +39,7 @@ const ROUTES: Routes = [
     VirtualScrollModule,
     // All material modules
     MdToolbarModule,
+    MdButtonModule,
     MdProgressSpinnerModule,
     // Setup maps
     AgmCoreModule.forRoot({
