@@ -6,6 +6,8 @@
 export const environment = {
   production: false,
   base: 'http://localhost:3000',
+  apiVersion: '2.0',
+  baseApiUrl: 'http://localhost/api/2.0',
   googleMaps: {
     apiKey: 'AIzaSyCBEipjiuluP1z2yMoPNRZTESTN3krdSD0'
   },

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { AuthService } from '../auth.service'
+import { Title } from '@angular/platform-browser'
+import { AuthService } from '../auth/auth.service'
 import { Branch } from '../branch'
+import { BranchService } from '../branch.service'
 
 @Component({
   selector: 'app-home',
@@ -8,25 +10,28 @@ import { Branch } from '../branch'
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  pageName = 'Home'
   protected branches: Branch[] = []
   protected loading = false
 
   // We'll need to include a reference to our authService in the constructor to gain access to the API's in the view
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private titleService: Title,
+              private branchService: BranchService
+              ) { }
 
   ngOnInit() {
+    this.titleService.setTitle(this.pageName)
     if (this.authService.authenticated) {
       // Fetch branches
       this.fetchBranches()
     }
   }
 
-  fetchBranches(query?: string) {
+  async fetchBranches(query?: string) {
     this.loading = true
-    setTimeout(() => {
-      this.branches = ['hey', 'there']
-      this.loading = false
-    }, 1000)
+    this.branches = await this.branchService.fetch()
+    this.loading = false
   }
 
 }

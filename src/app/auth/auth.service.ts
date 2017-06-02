@@ -3,7 +3,7 @@ import { Router } from '@angular/router'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { tokenNotExpired } from 'angular2-jwt'
 import * as Auth0 from 'auth0-js'
-import { environment as env } from '../environments/environment'
+import { environment as env } from '../../environments/environment'
 
 const TOKEN_NAME = 'token'
 const ID_TOKEN_NAME = 'id_token'
