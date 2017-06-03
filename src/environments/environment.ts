@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   base: 'http://localhost:3000',
   apiVersion: '2.0',
-  baseApiUrl: 'http://localhost/api/2.0',
+  baseApiUrl: 'http://localhost:3000/api/2.0',
   googleMaps: {
     apiKey: 'AIzaSyCBEipjiuluP1z2yMoPNRZTESTN3krdSD0'
   },
@@ -19,7 +19,7 @@ export const environment = {
     clientDomain: 'vets4warriors.auth0.com',
     // Auth config
     redirectUri: 'http://localhost:4200/authcallback',
-    audience: 'https://vets4warriors.auth0.com/api/v2/',
+    audience: 'https://clr.vets4warriors.com/api',
     scope: 'openid profile',
   }
 }

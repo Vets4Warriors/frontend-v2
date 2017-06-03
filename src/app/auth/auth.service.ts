@@ -80,8 +80,8 @@ export class AuthService {
     localStorage.removeItem(TOKEN_NAME)
     localStorage.removeItem(ID_TOKEN_NAME)
     localStorage.removeItem(PROFILE_NAME)
-    this.router.navigate(['/'])
     this.setLoggedIn(false)
+    this.router.navigate(['/'])
   }
 
   handleAuth() {

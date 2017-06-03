@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { Http, Headers, Response } from '@angular/http'
 import { AuthHttp } from 'angular2-jwt'
 import 'rxjs/add/operator/toPromise'
 
@@ -10,7 +9,7 @@ import { Branch } from './branch'
 export class BranchService {
   private branchesUrl = `${env.baseApiUrl}/branches`
 
-  constructor(private http: Http, private authHttp: AuthHttp) {}
+  constructor(public authHttp: AuthHttp) {}
 
   private handleError(error: any) {
     return Promise.reject(error.message || error)
@@ -20,7 +19,8 @@ export class BranchService {
     return this.authHttp
       .get(this.branchesUrl)
       .toPromise()
-      .then(res => res.json() as Branch[])
+      .then(res =>
+        res.json() as Branch[])
       .catch(this.handleError)
   }
 

@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { BranchListItemComponent } from './branch-list-item.component';
+import { BranchListItemComponent } from './branch-list-item.component'
 
 describe('BranchListItemComponent', () => {
-  let component: BranchListItemComponent;
-  let fixture: ComponentFixture<BranchListItemComponent>;
+  let component: BranchListItemComponent
+  let fixture: ComponentFixture<BranchListItemComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BranchListItemComponent ]
     })
-    .compileComponents();
-  }));
+    .compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BranchListItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(BranchListItemComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

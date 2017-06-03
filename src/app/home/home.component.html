@@ -1,9 +1,10 @@
 <app-login *ngIf="!authService.authenticated; else loggedIn"></app-login>
 <ng-template #loggedIn>
   <!-- The search bar and branches -->
-  <virtual-scroll [items]="branches" (update)="viewBranches = $event">
-    <p *ngFor="let branch of viewBranches">Branch</p>
-
+  <virtual-scroll id="branches-list" [items]="branches" (update)="viewBranches = $event">
+    <app-branch-list-item *ngFor="let branch of viewBranches" [branch]="branch"></app-branch-list-item>
     <md-spinner *ngIf="loading"></md-spinner>
   </virtual-scroll>
+
+  <!--<app-branch-list-item *ngFor="let branch of branches" [branch]="branch"></app-branch-list-item>-->
 </ng-template>

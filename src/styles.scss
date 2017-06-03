@@ -3,7 +3,7 @@
 @import '~spinkit/scss/spinners/7-three-bounce';
 @import 'variables';
 
-// Global 
+// Global
 h1 {
   font-family: $primary-font-family, $helvetica;
 }
@@ -19,6 +19,12 @@ section.loading {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+}
+
+app-root {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 /*

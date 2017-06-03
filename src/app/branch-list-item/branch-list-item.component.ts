@@ -9,7 +9,7 @@ import { Branch } from '../branch'
 export class BranchListItemComponent implements OnInit {
   @Input()
   branch: Branch
-  
+
   constructor() { }
 
   ngOnInit() {

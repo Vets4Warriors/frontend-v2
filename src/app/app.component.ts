@@ -11,6 +11,5 @@ import { AuthService } from './auth/auth.service'
 })
 export class AppComponent {
   constructor(atics: Angulartics2GoogleAnalytics,
-              private authService: AuthService,
-              ) {}
+              private authService: AuthService) {}
 }
