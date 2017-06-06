@@ -20,6 +20,6 @@ export const environment = {
     // Auth config
     redirectUri: 'http://localhost:4200/authcallback',
     audience: 'https://clr.vets4warriors.com/api',
-    scope: 'openid profile',
+    scope: 'openid profile email',
   }
 }
