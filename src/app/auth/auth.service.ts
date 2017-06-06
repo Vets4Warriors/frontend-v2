@@ -4,10 +4,14 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { tokenNotExpired } from 'angular2-jwt'
 import * as Auth0 from 'auth0-js'
 import { environment as env } from '../../environments/environment'
+import { UserProfile } from './user-profile'
 
 const TOKEN_NAME = 'token'
 const ID_TOKEN_NAME = 'id_token'
 const PROFILE_NAME = 'profile'
+
+declare const localStorage: any
+declare const window: any
 
 @Injectable()
 export class AuthService {
@@ -40,8 +44,8 @@ export class AuthService {
     return tokenNotExpired(TOKEN_NAME)
   }
 
-  get user() {
-    return JSON.parse(localStorage.getItem(PROFILE_NAME))
+  get user(): UserProfile {
+    return JSON.parse(localStorage.getItem(PROFILE_NAME)) as UserProfile
   }
 
   private setSession(authResult, profile) {
