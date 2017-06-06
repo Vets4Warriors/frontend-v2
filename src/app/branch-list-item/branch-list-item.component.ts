@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { Branch } from '../branch'
+import { Branch } from '../clr-api/branch'
 
 @Component({
   selector: 'app-branch-list-item',

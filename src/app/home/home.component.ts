@@ -4,8 +4,8 @@ import { ChangeDetectorRef } from '@angular/core'
 import { MdSnackBar } from '@angular/material'
 import { ChangeEvent } from 'angular2-virtual-scroll'
 import { AuthService } from '../auth/auth.service'
-import { Branch } from '../branch'
-import { BranchService } from '../branch.service'
+import { Branch } from '../clr-api/branch'
+import { BranchService } from '../clr-api/branch.service'
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,10 @@ import { BranchService } from '../branch.service'
 })
 export class HomeComponent implements OnInit {
   pageName = 'Home'
+  // All loaded branches
   protected branches: Branch[] = []
+  // All branches in view
+  protected viewBranches: Branch[] = []
   protected loading = false
 
   // We'll need to include a reference to our authService in the constructor to gain access to the API's in the view
@@ -22,7 +25,6 @@ export class HomeComponent implements OnInit {
               private titleService: Title,
               private branchService: BranchService,
               private snackBar: MdSnackBar,
-              private cd: ChangeDetectorRef,
               ) { }
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   test(event: ChangeEvent) {
     console.log(event)
+    this.viewBranches = event as Branch[]
   }
 
   handleLoggedIn(loggedIn: boolean) {
@@ -54,8 +57,6 @@ export class HomeComponent implements OnInit {
     this.loading = true
     try {
       this.branches = await this.branchService.fetch()
-      this.cd.markForCheck()
-      console.log('marked')
     } catch (err) {
       this.handleError(err)
     }

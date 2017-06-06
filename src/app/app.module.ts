@@ -25,7 +25,10 @@ import { AuthCallbackComponent } from './auth/auth-callback/auth-callback.compon
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './login/login.component'
 import { BranchListItemComponent } from './branch-list-item/branch-list-item.component'
-import { BranchService } from './branch.service'
+import { ClrApiModule } from './clr-api/clr-api.module';
+import { SidePanelComponent } from './side-panel/side-panel/side-panel.component';
+import { SidePanelContainerComponent } from './side-panel/side-panel-container/side-panel-container.component'
+import { SidePanelModule } from './side-panel/side-panel.module'
 
 const ROUTES: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -43,6 +46,8 @@ const ROUTES: Routes = [
   imports: [
     // Local Modules
     AuthModule,
+    ClrApiModule,
+    SidePanelModule,
     // Vendor Modules
     BrowserModule,
     HttpModule,
@@ -64,7 +69,6 @@ const ROUTES: Routes = [
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [
-    BranchService,
   ],
   bootstrap: [AppComponent]
 })

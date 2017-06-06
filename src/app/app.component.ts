@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Angulartics2GoogleAnalytics } from 'angulartics2'
-import { BranchService } from './branch.service'
+import { BranchService } from './clr-api/branch.service'
 import { AuthService } from './auth/auth.service'
 
 

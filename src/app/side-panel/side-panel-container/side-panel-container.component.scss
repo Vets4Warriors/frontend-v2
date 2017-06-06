@@ -1,0 +1,11 @@
+@import '../../../variables';
+
+:host {
+  position: fixed;
+  height: 100%;
+  min-width: 200px;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  background-color: $white;
+}
